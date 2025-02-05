@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptography & Network Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center p-8">
+
+  <div class="font-mono justify-items-center p-8 w-full max-w-lg">
+    <h1 class="text-3xl text-center">Cryptography & Network Security</h1>
+
+    <div class="flex flex-col gap-10 pt-10 w-full items-center">
+      <div class="flex flex-col items-start gap-5 w-full">
+        <h1 class="text-2xl">Caesar Cipher</h1>
+
+        <div class="flex items-center gap-3">
+          <h1 class="text-lg">Shift:</h1>
+          <input id="shift"
+            class="p-1 w-[6rem] border-b-2 border-gray-600 bg-transparent focus:outline-none text-lg text-center"
+            type="number" min="0" value="3">
+        </div>
+
+        <input id="encryptText" class="p-2 w-full bg-gray-200 focus:outline-none" type="text"
+          placeholder="Enter text to encrypt">
+
+        <button class="bg-gray-600 p-2 text-white cursor-pointer hover:bg-gray-500 w-full"
+          onclick="CaesarCipherEncrypt()">
+          Encrypt
+        </button>
+
+        <input id="decryptText" class="p-2 w-full bg-gray-200 focus:outline-none" type="text"
+          placeholder="Enter text to decrypt">
+
+        <button class="bg-gray-600 p-2 text-white cursor-pointer hover:bg-gray-500 w-full"
+          onclick="CaesarCipherDecrypt()">
+          Decrypt
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-10 pt-10 w-full items-center">
+      <div class="flex flex-col items-start gap-5 w-full">
+        <h1 class="text-2xl">Monoalphabetic Cipher</h1>
+
+        <div class="flex items-center gap-3 w-full">
+          <h1 class="text-lg">Substitution Key:</h1>
+          <input id="substitution-key"
+            class="p-2 w-full border-b-2 border-gray-600 bg-transparent focus:outline-none text-lg" type="text"
+            placeholder="Enter 26-letter key" maxlength="26">
+        </div>
+
+        <input id="encryptTextMC" class="p-2 w-full bg-gray-200 focus:outline-none" type="text"
+          placeholder="Enter text to encrypt">
+
+        <button class="bg-gray-600 p-2 text-white cursor-pointer hover:bg-gray-500 w-full"
+          onclick="MonoalphabeticEncrypt()">
+          Encrypt
+        </button>
+
+        <input id="decryptTextMC" class="p-2 w-full bg-gray-200 focus:outline-none" type="text"
+          placeholder="Enter text to decrypt">
+
+        <button class="bg-gray-600 p-2 text-white cursor-pointer hover:bg-gray-500 w-full"
+          onclick="MonoalphabeticDecrypt()">
+          Decrypt
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-10 pt-10 w-full items-center">
+      <div class="flex flex-col items-start gap-5 w-full">
+        <h1 class="text-2xl">Playfair Cipher</h1>
+
+        <div class="flex items-center gap-3 w-full">
+          <h1 class="text-lg">Keyword:</h1>
+          <input id="keyword" class="p-2 w-full border-b-2 border-gray-600 bg-transparent focus:outline-none text-lg"
+            type="text" placeholder="Enter keyword" maxlength="26" oninput="generateKeyTable()">
+        </div>
+
+        <table id="key-square" class="w-full table-fixed text-center shadow-inner shadow-gray-400">
+        </table>
+
+        <input id="encryptTextPC" class="p-2 w-full bg-gray-200 focus:outline-none" type="text"
+          placeholder="Enter text to encrypt">
+
+        <button class="bg-gray-600 p-2 text-white cursor-pointer hover:bg-gray-500 w-full"
+          onclick="encryptPlayfair()">
+          Encrypt
+        </button>
+
+          <input id="decryptTextPC" class="p-2 w-full bg-gray-200 focus:outline-none" type="text"
+            placeholder="Enter text to decrypt">
+
+        <button class="bg-gray-600 p-2 text-white cursor-pointer hover:bg-gray-500 w-full"
+          onclick="decryptPlayfair()">
+          Decrypt
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="./caesarcipher.js"></script>
+  <script src="./monoalphabeticcipher.js"></script>
+  <script src="./playfair.js"></script>
+
+</body>
+
+</html>
